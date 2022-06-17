@@ -127,9 +127,9 @@ class _DetailBookPageState extends State<DetailBookPage> {
                             try {
                               await canLaunchUrl(uri)
                                   ? await launchUrl(uri)
-                                  : print("Failed to navigate!");
+                                  : debugPrint("Failed to navigate!");
                             } catch (e) {
-                              print(e);
+                              debugPrint(e.toString());
                             }
                           },
                           child: const Text(
@@ -155,7 +155,7 @@ class _DetailBookPageState extends State<DetailBookPage> {
                       const Divider(),
                       controller.similarBooks == null
                           ? const CircularProgressIndicator()
-                          : Container(
+                          : SizedBox(
                               height: 180,
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
@@ -165,7 +165,7 @@ class _DetailBookPageState extends State<DetailBookPage> {
                                 itemBuilder: (context, index) {
                                   final current =
                                       controller.similarBooks!.books![index];
-                                  return Container(
+                                  return SizedBox(
                                     width: 100,
                                     child: Column(
                                       children: [
