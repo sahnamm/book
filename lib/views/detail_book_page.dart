@@ -213,7 +213,8 @@ class _DetailBookPageState extends State<DetailBookPage> {
                                               .similarBooks!.books![index];
                                           return GestureDetector(
                                             onTap: () {
-                                              Navigator.of(context).push(
+                                              Navigator.of(context)
+                                                  .pushReplacement(
                                                 MaterialPageRoute(
                                                   builder: (context) {
                                                     return DetailBookPage(
