@@ -39,4 +39,9 @@ class BookController extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  refresh() {
+    bookDetail = null;
+    similarBooks = null;
+  }
 }
